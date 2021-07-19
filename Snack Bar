@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(Myapp());
+}
+
+class Myapp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Main(),
+    );
+  }
+}
+
+class Main extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Snack Bar"),
+          centerTitle: true,
+        ),
+
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              OutlinedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("hihi"),
+                      duration: Duration(seconds: 5),
+                    ),
+                  );
+                },
+                child: Text("Snack Bar",
+                style: TextStyle(
+                    color: Colors.blue,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      
+    );
+  }
+}
