@@ -12,7 +12,7 @@ class Myapp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
         title: "practice",
         home: Scaffold(
-          backgroundColor: Colors.lightGreen,
+          backgroundColor: Colors.red[300],
           appBar: AppBar(
             title: Text("sonmin"),
             centerTitle: true,
@@ -20,13 +20,28 @@ class Myapp extends StatelessWidget {
             elevation: 0.0,
           ),
           body: Padding(
-            padding: EdgeInsets.fromLTRB(50,30,20,10),
+            padding: EdgeInsets.fromLTRB(30,40,0,0),
+            
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               
               children: [
-                CircleAvatar(
-                  backgroundImage: AssetImage(""),
+                Center(
+                  child: 
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    backgroundImage: NetworkImage("https://download-hub.com/wp-content/uploads/2020/12/한컴타자연습-2020.png"),
+                    radius: 90,
+                    
+                  ),
+                  
+                ),
+                Divider(
+                  height: 60,
+                  color: Colors.grey,
+                  thickness: 0.7,
+                  endIndent: 30,
+                  
                 ),
                 Text( 
                   "Text",
@@ -37,10 +52,7 @@ class Myapp extends StatelessWidget {
                   ),
 
                 ),
-                SizedBox(
-                  height: 0,
-                ),
-
+                
                 Text(
                   "name",
                   style: TextStyle(
@@ -48,9 +60,27 @@ class Myapp extends StatelessWidget {
                     fontSize: 25,
                   ),
                 ),
-                
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    Icon(Icons.add_circle_outline),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text("Add",
+                      style: 
+                      TextStyle(
+                        fontSize: 10,
+                      ),
+                    ),
+                  ],
+                ),
               ],
+              
             ),
+            
           ),
         ),
     );
