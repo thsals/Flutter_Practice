@@ -16,19 +16,17 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: Text("Login"),
         centerTitle: true,
-        leading: IconButton(
-          onPressed: (){}, 
-          icon: Icon(Icons.menu)
-        ),
+        
         actions: [
           IconButton(
             onPressed: (){}, 
             icon: Icon(Icons.search)
           ),
         ],
-        
+                
       ),
       body: Column(
+        
         children: [
           Padding(padding: EdgeInsets.only(top:60)),
           Center(
@@ -101,6 +99,9 @@ class _LoginPageState extends State<LoginPage> {
             ), 
           ),
         ],
+      ),
+      drawer: Drawer(
+        
       ),
     );
   }
