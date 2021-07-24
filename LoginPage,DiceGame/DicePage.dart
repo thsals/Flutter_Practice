@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
-class DicePage extends StatelessWidget {
+class DicePage extends StatefulWidget {
+  
   const DicePage({ Key? key }) : super(key: key);
 
+  @override
+  _DicePageState createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+
+  int leftdice = 1;
+  int rightdice = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +34,7 @@ class DicePage extends StatelessWidget {
                 children: [
                   Expanded(
                       child: Image(
-                      image: NetworkImage("https://raw.githubusercontent.com/icodingchef/login_dice/master/image/dice1.png"),
+                      image: NetworkImage("https://raw.githubusercontent.com/icodingchef/login_dice/master/image/dice$leftdice.png"),
                       width: 300,
                     ),
                   ),
@@ -33,7 +43,7 @@ class DicePage extends StatelessWidget {
                   ),
                   Expanded(
                       child: Image(
-                      image: NetworkImage("https://raw.githubusercontent.com/icodingchef/login_dice/master/image/dice2.png"),
+                      image: NetworkImage("https://raw.githubusercontent.com/icodingchef/login_dice/master/image/dice$rightdice.png"),
                       width: 300,
                     ),
                   ),
@@ -45,7 +55,12 @@ class DicePage extends StatelessWidget {
             ),
             ButtonTheme(
               child: OutlinedButton(
-                onPressed: (){}, 
+                onPressed: (){
+                  setState(() {
+                    leftdice = Random().nextInt(6) + 1;
+                    rightdice = Random().nextInt(6) + 1;
+                  });
+                }, 
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.red),
                 ),
